@@ -2,7 +2,7 @@
  * graphic.h
  *
  *  Created on: Sep 22, 2019
- *      Author: root
+ *      Author: Nazarec
  */
 
 #ifndef GRAPHIC_H_
