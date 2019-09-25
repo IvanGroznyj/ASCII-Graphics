@@ -40,3 +40,27 @@ void Graphic::Clear(int brightnes){
 		}
 	}
 }
+
+void Graphic::DrawRectangle(int x, int y, int width, int height, int linebrightnes){
+	for(int j=0; j<width; j++){
+		Graphic::arr[y][j+x] = Graphic::symbols[linebrightnes];
+		Graphic::arr[y+height-1][j+x] = Graphic::symbols[linebrightnes];
+	}
+	for(int j=0; j<height-2; j++){
+		Graphic::arr[y+j+1][x] = Graphic::symbols[linebrightnes];
+		Graphic::arr[y+j+1][x+width-1] = Graphic::symbols[linebrightnes];
+	}
+}
+
+void Graphic::FillRectangle(int x, int y, int width, int height, int linebrightnes, int fillbrightnes){
+	for(int j=0; j<width; j++){
+		for(int i=0; i<height; i++){
+			if(i==0||j==0||i==height-1||j==width-1){
+				Graphic::arr[i+y][j+x] = Graphic::symbols[linebrightnes];
+			}else{
+				Graphic::arr[i+y][j+x] = Graphic::symbols[fillbrightnes];
+			}
+		}
+	}
+	
+}
